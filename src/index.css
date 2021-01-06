@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-gray-100 max-w-6xl mx-auto;
+}
+
+.heading-primary {
+	@apply text-2xl my-4;
+}
+
+.search-input {
+	display: inline-block;
+	width: 100%;
+	max-width: 700px;
+}
+
+.card {
+	@apply bg-white p-6 my-6 shadow-md border border-gray-100 rounded grid gap-6 grid-cols-9 overflow-hidden;
+}
+
+.badge {
+	@apply border-2 border-blue-800 p-1 inline rounded;
+}
