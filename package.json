@@ -21,7 +21,6 @@
 		"react-scripts": "^4.0.1",
 		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
 	},
-	"proxy": "https://jobs.github.com",
 	"browserslist": {
 		"production": [
 			">0.2%",

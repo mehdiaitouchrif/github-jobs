@@ -28,7 +28,9 @@ const State = ({ children }) => {
 	// Get All Jobs
 	const getJobs = async () => {
 		setLoading()
-		const res = await fetch('/positions.json')
+		const res = await fetch(
+			'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json'
+		)
 		const data = await res.json()
 		dispatch({
 			type: GET_JOBS,
@@ -39,7 +41,9 @@ const State = ({ children }) => {
 	// Get A Single Job Details
 	const getJob = async (id) => {
 		setLoading()
-		const res = await fetch(`/positions/${id}.json`)
+		const res = await fetch(
+			`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json`
+		)
 		const data = await res.json()
 		dispatch({
 			type: GET_JOB,
@@ -50,7 +54,9 @@ const State = ({ children }) => {
 	// Search for Jobs
 	const searchJobs = async (term) => {
 		setLoading()
-		const res = await fetch(`/positions.json?search=${term}`)
+		const res = await fetch(
+			`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?search=${term}`
+		)
 		const data = await res.json()
 		dispatch({
 			type: SEARCH_JOBS,
@@ -61,7 +67,9 @@ const State = ({ children }) => {
 	// Filter only Full Time Jobs
 	const getFullTimeJobs = async () => {
 		setLoading()
-		const res = await fetch('/positions.json?full_time=true')
+		const res = await fetch(
+			'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?full_time=true'
+		)
 		const data = await res.json()
 		dispatch({
 			type: GET_FULL_TIME,
@@ -72,7 +80,9 @@ const State = ({ children }) => {
 	// Filter by location
 	const getLocationJobs = async (loc) => {
 		setLoading()
-		const res = await fetch(`/positions.json?location=${loc}`)
+		const res = await fetch(
+			`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?location=${loc}`
+		)
 		const data = await res.json()
 		dispatch({
 			type: GET_LOCATION,
