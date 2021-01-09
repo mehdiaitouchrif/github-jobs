@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Context from '../context/context'
+import JobSkeleton from './skeletons/JobSkeleton'
 
 const JobDetails = (props) => {
 	const context = useContext(Context)
@@ -13,7 +14,7 @@ const JobDetails = (props) => {
 
 	return (
 		<div className='grid gap-4 md:grid-cols-5 px-4 py-2 md:px-0'>
-			<div className='w-full'>
+			<div className='overflow-hidden'>
 				<Link to='/' className='font-semibold'>
 					Back to search{' '}
 				</Link>
@@ -26,7 +27,7 @@ const JobDetails = (props) => {
 			</div>
 			<div className=' md:col-span-4 mb-6'>
 				{loading ? (
-					<h1>Loading...</h1>
+					<JobSkeleton />
 				) : (
 					<div>
 						<h1 className='text-2xl mb-3'>{jobDetails.title} </h1>

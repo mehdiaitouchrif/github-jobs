@@ -25,3 +25,7 @@ body {
 .badge {
 	@apply border-2 border-blue-800 p-1 inline rounded;
 }
+
+.skeleton {
+	@apply bg-gray-200 my-4 rounded;
+}
