@@ -15,8 +15,21 @@ const JobDetails = (props) => {
 	return (
 		<div className='grid gap-4 md:grid-cols-5 px-4 py-2 md:px-0'>
 			<div className='overflow-hidden'>
-				<Link to='/' className='font-semibold'>
-					Back to search{' '}
+				<Link to='/' className='font-semibold flex'>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke='currentColor'
+						className='w-6 mr-2'>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							stroke-width='2'
+							d='M7 16l-4-4m0 0l4-4m-4 4h18'
+						/>
+					</svg>
+					<span>Back to search </span>
 				</Link>
 				<div>
 					<p className='text-lg font-semibold'>How to apply?</p>
