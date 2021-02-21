@@ -18,6 +18,10 @@ const initialState = {
 	loading: false,
 }
 
+const credentials = `client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+
+console.log(credentials)
+
 const State = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState)
 
@@ -29,7 +33,7 @@ const State = ({ children }) => {
 	const getJobs = async () => {
 		setLoading()
 		const res = await fetch(
-			'https://jobs.github.com/positions.json'
+			`https://jobs.github.com/positions.json?${credentials}`
 		)
 		const data = await res.json()
 		dispatch({
@@ -42,7 +46,7 @@ const State = ({ children }) => {
 	const getJob = async (id) => {
 		setLoading()
 		const res = await fetch(
-			`https://jobs.github.com/positions/${id}.json`
+			`https://jobs.github.com/positions/${id}.json?${credentials}`
 		)
 		const data = await res.json()
 		dispatch({
@@ -55,7 +59,7 @@ const State = ({ children }) => {
 	const searchJobs = async (term) => {
 		setLoading()
 		const res = await fetch(
-			`jobs.github.com/positions.json?search=${term}`
+			`https://jobs.github.com/positions.json?search=${term}&${credentials}`
 		)
 		const data = await res.json()
 		dispatch({
@@ -68,7 +72,7 @@ const State = ({ children }) => {
 	const getFullTimeJobs = async () => {
 		setLoading()
 		const res = await fetch(
-			'https://jobs.github.com/positions.json?full_time=true'
+			`https://jobs.github.com/positions.json?full_time=true&${credentials}`
 		)
 		const data = await res.json()
 		dispatch({
@@ -81,7 +85,7 @@ const State = ({ children }) => {
 	const getLocationJobs = async (loc) => {
 		setLoading()
 		const res = await fetch(
-			`https://jobs.github.com/positions.json?location=${loc}`
+			`https://jobs.github.com/positions.json?location=${loc}&${credentials}`
 		)
 		const data = await res.json()
 		dispatch({
@@ -101,7 +105,8 @@ const State = ({ children }) => {
 				getFullTimeJobs,
 				getLocationJobs,
 				searchJobs,
-			}}>
+			}}
+		>
 			{children}
 		</Context.Provider>
 	)
