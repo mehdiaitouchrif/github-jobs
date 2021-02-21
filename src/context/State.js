@@ -20,8 +20,6 @@ const initialState = {
 
 const credentials = `client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
 
-console.log(credentials)
-
 const State = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState)
 
