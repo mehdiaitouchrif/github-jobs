@@ -29,7 +29,7 @@ const State = ({ children }) => {
 	const getJobs = async () => {
 		setLoading()
 		const res = await fetch(
-			'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json'
+			'https://jobs.github.com/positions.json'
 		)
 		const data = await res.json()
 		dispatch({
@@ -42,7 +42,7 @@ const State = ({ children }) => {
 	const getJob = async (id) => {
 		setLoading()
 		const res = await fetch(
-			`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json`
+			`https://jobs.github.com/positions/${id}.json`
 		)
 		const data = await res.json()
 		dispatch({
@@ -55,7 +55,7 @@ const State = ({ children }) => {
 	const searchJobs = async (term) => {
 		setLoading()
 		const res = await fetch(
-			`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?search=${term}`
+			`jobs.github.com/positions.json?search=${term}`
 		)
 		const data = await res.json()
 		dispatch({
@@ -68,7 +68,7 @@ const State = ({ children }) => {
 	const getFullTimeJobs = async () => {
 		setLoading()
 		const res = await fetch(
-			'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?full_time=true'
+			'https://jobs.github.com/positions.json?full_time=true'
 		)
 		const data = await res.json()
 		dispatch({
@@ -81,7 +81,7 @@ const State = ({ children }) => {
 	const getLocationJobs = async (loc) => {
 		setLoading()
 		const res = await fetch(
-			`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?location=${loc}`
+			`https://jobs.github.com/positions.json?location=${loc}`
 		)
 		const data = await res.json()
 		dispatch({
